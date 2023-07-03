@@ -67,6 +67,11 @@ steps:
 #     Package: '$(System.DefaultWorkingDirectory)/drop/WebApp.zip'
 #     TakeAppOfflineFlag: true
 #     JSONFiles: '**/appsettings.json'
+- task: DownloadPipelineArtifact@2
+  inputs:
+    buildType: 'current'
+    artifactName: 'drop'
+    targetPath: '$(System.DefaultWorkingDirectory)'
 - task: AzureRmWebAppDeployment@4
   inputs:
     ConnectionType: 'AzureRM'
