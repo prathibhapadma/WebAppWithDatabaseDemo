@@ -46,3 +46,11 @@ steps:
   displayName: 'Publish Artifact (WebApp.zip)'
   inputs:
     PathtoPublish: '$(build.artifactstagingdirectory)'
+
+- task: AzureRmWebAppDeployment@4
+  displayName: 'Azure App Service Deploy: web-app-win-mach'
+  inputs:
+    azureSubscription: 'Azure subscription 1 (38f51217-7342-4f22-b591-b19d85f1504d)'
+    WebAppName: 'web-app-win-mach'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/drop/WebApp.zip'
+
