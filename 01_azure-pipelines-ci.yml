@@ -46,18 +46,18 @@ steps:
   displayName: 'Publish Artifact (WebApp.zip)'
   inputs:
     PathtoPublish: '$(build.artifactstagingdirectory)'
-- task: AzureResourceManagerTemplateDeployment@3
-  inputs:
-    deploymentScope: 'Resource Group'
-    azureResourceManagerConnection: 'Azure subscription 1 (38f51217-7342-4f22-b591-b19d85f1504d)'
-    subscriptionId: '38f51217-7342-4f22-b591-b19d85f1504d'
-    action: 'Create Or Update Resource Group'
-    resourceGroupName: 'win-rg-web-app'
-    location: 'East US'
-    templateLocation: 'Linked artifact'
-    csmFile: 'template/template.json'
-    csmParametersFile: 'template/parameters.json'
-    deploymentMode: 'Incremental'
+# - task: AzureResourceManagerTemplateDeployment@3
+#   inputs:
+#     deploymentScope: 'Resource Group'
+#     azureResourceManagerConnection: 'Azure subscription 1 (38f51217-7342-4f22-b591-b19d85f1504d)'
+#     subscriptionId: '38f51217-7342-4f22-b591-b19d85f1504d'
+#     action: 'Create Or Update Resource Group'
+#     resourceGroupName: 'win-rg-web-app'
+#     location: 'East US'
+#     templateLocation: 'Linked artifact'
+#     csmFile: 'template/template.json'
+#     csmParametersFile: 'template/parameters.json'
+#     deploymentMode: 'Incremental'
 # - task: AzureRmWebAppDeployment@3
 #   displayName: Deploy WebApp to Azure
 #   inputs:
