@@ -47,43 +47,43 @@ steps:
     ArtifactName: DemoApplication
     publishLocation: Container
 
-- task: AzureResourceManagerTemplateDeployment@3
-  inputs:
-    deploymentScope: 'Resource Group'
-    azureResourceManagerConnection: 'Azure subscription 1 (38f51217-7342-4f22-b591-b19d85f1504d)'
-    subscriptionId: '38f51217-7342-4f22-b591-b19d85f1504d'
-    action: 'Create Or Update Resource Group'
-    resourceGroupName: 'win-rg-web-app'
-    location: 'East US'
-    templateLocation: 'Linked artifact'
-    csmFile: 'template/template.json'
-    csmParametersFile: 'template/parameters.json'
-    deploymentMode: 'Incremental'
-# - task: AzureRmWebAppDeployment@3
-#   displayName: Deploy WebApp to Azure
+# - task: AzureResourceManagerTemplateDeployment@3
 #   inputs:
-#     azureSubscription: 'WebAppWithDatabaseDemo_spn'
-#     appType: 'app'
-#     WebAppName: '$(WebAppName)'
-#     Package: '$(System.DefaultWorkingDirectory)/drop/WebApp.zip'
-#     TakeAppOfflineFlag: true
-#     JSONFiles: '**/appsettings.json'
-- task: DownloadPipelineArtifact@2
-  inputs:
-    buildType: 'current'
-    artifactName: 'DemoApplication'
-    targetPath: '$(System.DefaultWorkingDirectory)'
-- task: AzureRmWebAppDeployment@4
-  inputs:
-    ConnectionType: 'AzureRM'
-    azureSubscription: 'Azure subscription 1 (38f51217-7342-4f22-b591-b19d85f1504d)'
-    appType: 'webApp'
-    WebAppName: 'web-app-win-mach'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/WebApp.zip'
+#     deploymentScope: 'Resource Group'
+#     azureResourceManagerConnection: 'Azure subscription 1 (38f51217-7342-4f22-b591-b19d85f1504d)'
+#     subscriptionId: '38f51217-7342-4f22-b591-b19d85f1504d'
+#     action: 'Create Or Update Resource Group'
+#     resourceGroupName: 'win-rg-web-app'
+#     location: 'East US'
+#     templateLocation: 'Linked artifact'
+#     csmFile: 'template/template.json'
+#     csmParametersFile: 'template/parameters.json'
+#     deploymentMode: 'Incremental'
+# # - task: AzureRmWebAppDeployment@3
+# #   displayName: Deploy WebApp to Azure
+# #   inputs:
+# #     azureSubscription: 'WebAppWithDatabaseDemo_spn'
+# #     appType: 'app'
+# #     WebAppName: '$(WebAppName)'
+# #     Package: '$(System.DefaultWorkingDirectory)/drop/WebApp.zip'
+# #     TakeAppOfflineFlag: true
+# #     JSONFiles: '**/appsettings.json'
+# - task: DownloadPipelineArtifact@2
+#   inputs:
+#     buildType: 'current'
+#     artifactName: 'DemoApplication'
+#     targetPath: '$(System.DefaultWorkingDirectory)'
 # - task: AzureRmWebAppDeployment@4
-#   displayName: 'Azure App Service Deploy: web-app-win-mach'
 #   inputs:
+#     ConnectionType: 'AzureRM'
 #     azureSubscription: 'Azure subscription 1 (38f51217-7342-4f22-b591-b19d85f1504d)'
+#     appType: 'webApp'
 #     WebAppName: 'web-app-win-mach'
-#     packageForLinux: '$(System.DefaultWorkingDirectory)/_prathibha1508.WebAppWithDatabaseDemo/drop/WebApp.zip'
+#     packageForLinux: '$(System.DefaultWorkingDirectory)/WebApp.zip'
+# # - task: AzureRmWebAppDeployment@4
+# #   displayName: 'Azure App Service Deploy: web-app-win-mach'
+# #   inputs:
+# #     azureSubscription: 'Azure subscription 1 (38f51217-7342-4f22-b591-b19d85f1504d)'
+# #     WebAppName: 'web-app-win-mach'
+# #     packageForLinux: '$(System.DefaultWorkingDirectory)/_prathibha1508.WebAppWithDatabaseDemo/drop/WebApp.zip'
 
