@@ -70,15 +70,20 @@ steps:
 - task: DownloadPipelineArtifact@2
   inputs:
     buildType: 'current'
-    artifactName: 'drop'
+    artifactName: 'drop/*'
     targetPath: '$(System.DefaultWorkingDirectory)'
+- task: CmdLine@2
+  inputs:
+    script: |
+      cd $(System.DefaultWorkingDirectory)
+      ls
 - task: AzureRmWebAppDeployment@4
   inputs:
     ConnectionType: 'AzureRM'
     azureSubscription: 'Azure subscription 1 (38f51217-7342-4f22-b591-b19d85f1504d)'
     appType: 'webApp'
     WebAppName: 'web-app-win-mach'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/drop/WebApp.zip'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/WebApp.zip'
 # - task: AzureRmWebAppDeployment@4
 #   displayName: 'Azure App Service Deploy: web-app-win-mach'
 #   inputs:
