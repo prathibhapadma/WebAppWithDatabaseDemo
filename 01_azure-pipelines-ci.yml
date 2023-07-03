@@ -58,10 +58,26 @@ steps:
     csmFile: 'template/template.json'
     csmParametersFile: 'template/parameters.json'
     deploymentMode: 'Incremental'
+# - task: AzureRmWebAppDeployment@3
+#   displayName: Deploy WebApp to Azure
+#   inputs:
+#     azureSubscription: 'WebAppWithDatabaseDemo_spn'
+#     appType: 'app'
+#     WebAppName: '$(WebAppName)'
+#     Package: '$(System.DefaultWorkingDirectory)/drop/WebApp.zip'
+#     TakeAppOfflineFlag: true
+#     JSONFiles: '**/appsettings.json'
 - task: AzureRmWebAppDeployment@4
-  displayName: 'Azure App Service Deploy: web-app-win-mach'
   inputs:
+    ConnectionType: 'AzureRM'
     azureSubscription: 'Azure subscription 1 (38f51217-7342-4f22-b591-b19d85f1504d)'
+    appType: 'webApp'
     WebAppName: 'web-app-win-mach'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/_prathibha1508.WebAppWithDatabaseDemo/drop/WebApp.zip'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/drop/WebApp.zip'
+# - task: AzureRmWebAppDeployment@4
+#   displayName: 'Azure App Service Deploy: web-app-win-mach'
+#   inputs:
+#     azureSubscription: 'Azure subscription 1 (38f51217-7342-4f22-b591-b19d85f1504d)'
+#     WebAppName: 'web-app-win-mach'
+#     packageForLinux: '$(System.DefaultWorkingDirectory)/_prathibha1508.WebAppWithDatabaseDemo/drop/WebApp.zip'
 
