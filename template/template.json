@@ -42,7 +42,7 @@
             "location": "[parameters('location')]",
             "tags": null,
             "dependsOn": [
-                "microsoft.insights/components/web-app-win-mach2"
+                "microsoft.insights/components/web-app-win-mach"
             ],
             "properties": {
                 "name": "[parameters('name')]",
@@ -50,11 +50,11 @@
                     "appSettings": [
                         {
                             "name": "APPINSIGHTS_INSTRUMENTATIONKEY",
-                            "value": "[reference('microsoft.insights/components/web-app-win-mach2', '2015-05-01').InstrumentationKey]"
+                            "value": "[reference('microsoft.insights/components/web-app-win-mach', '2015-05-01').InstrumentationKey]"
                         },
                         {
                             "name": "APPLICATIONINSIGHTS_CONNECTION_STRING",
-                            "value": "[reference('microsoft.insights/components/web-app-win-mach2', '2015-05-01').ConnectionString]"
+                            "value": "[reference('microsoft.insights/components/web-app-win-mach', '2015-05-01').ConnectionString]"
                         },
                         {
                             "name": "ApplicationInsightsAgent_EXTENSION_VERSION",
