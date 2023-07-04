@@ -6,13 +6,13 @@
             "value": "38f51217-7342-4f22-b591-b19d85f1504d"
         },
         "name": {
-            "value": "web-app-win-mach"
+            "value": "web-app-win-mach2"
         },
         "location": {
             "value": "East US"
         },
         "hostingPlanName": {
-            "value": "ASP-winrgwebapp-123e"
+            "value": "ASP-winrgwebapp-8637"
         },
         "serverFarmResourceGroup": {
             "value": "win-rg-web-app"
@@ -22,6 +22,21 @@
         },
         "ftpsState": {
             "value": "FtpsOnly"
+        },
+        "sku": {
+            "value": "Standard"
+        },
+        "skuCode": {
+            "value": "S1"
+        },
+        "numberOfWorkers": {
+            "value": "1"
+        },
+        "workerSize": {
+            "value": "0"
+        },
+        "workerSizeId": {
+            "value": "0"
         },
         "currentStack": {
             "value": "dotnet"
