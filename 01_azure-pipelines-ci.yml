@@ -12,11 +12,11 @@ steps:
 #     packageType: sdk
 #     version: 6.0.x
 #     installationPath: $(Agent.ToolsDirectory)/dotnet
-- task: DotNetCoreCLI@2
-  displayName: Restore Nuget Packages
-  inputs:
-    command: restore
-    projects: '**/WebApp.csproj'
+# - task: DotNetCoreCLI@2
+#   displayName: Restore Nuget Packages
+#   inputs:
+#     command: restore
+#     projects: '**/WebApp.csproj'
 - task: DotNetCoreCLI@2
   displayName: Build Web App
   inputs:
