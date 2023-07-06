@@ -1,7 +1,6 @@
 trigger: 'none' # will disable CI builds entirely
 
-pool:
-  vmImage: 'self-hosted-agent-win'
+pool: self-hosted-agent-win
     
 variables:
   BuildConfiguration: release
