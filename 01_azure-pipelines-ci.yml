@@ -1,4 +1,4 @@
-trigger: 'none' # will disable CI builds entirely
+trigger: 'none' 
 
 pool: self-hosted-agent-win
     
@@ -17,13 +17,11 @@ steps:
   inputs:
     command: restore
     projects: '**/WebApp.csproj'
-
 - task: DotNetCoreCLI@2
   displayName: Build Web App
   inputs:
     projects: '**/WebApp.csproj'
     arguments: '--configuration $(BuildConfiguration)'
-
 - task: DotNetCoreCLI@2
   displayName: Run Unit Tests
   inputs:
@@ -43,6 +41,7 @@ steps:
     PathtoPublish: $(Build.ArtifactStagingDirectory)
     ArtifactName: DemoApplication
     publishLocation: Container
+
 # - task: AzureResourceManagerTemplateDeployment@3
 #   inputs:
 #     deploymentScope: 'Resource Group'
